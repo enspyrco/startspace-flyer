@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Enspyr's StartSpace flyer — a forge-web-app instance. The flyer artifact plus the forge that iterates it.",
   "dependencies": {
-    "forge-web-app": "github:nickmeinhold/forge-web-app#v0.1.0"
+    "forge-web-app": "github:nickmeinhold/forge-web-app#v0.2.0"
   },
   "scripts": {
     "forge:local": "node forge-local/cast.mjs",

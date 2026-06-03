@@ -51,6 +51,10 @@ export const profile = defineProfile({
     "all text passes WCAG AA contrast",
   ],
 
+  // The flyer's QR is a ~119KB data: URI (93% of the file). Protect it from the loop so the
+  // builder never sees/reproduces the blob and it survives every iteration byte-exact.
+  protectedPatterns: ["data:image/[^\"']+"],
+
   examples: [
     "make the hook bigger and more in-your-face — bolder hero",
     "warmer and friendlier for non-technical founders",
