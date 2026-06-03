@@ -1,0 +1,11 @@
+name = "enspyr-forge-api"
+main = "index.mjs"
+compatibility_date = "2026-05-01"
+
+# No KV/D1 binding — cost control is on the Anthropic credential's own spend limit;
+# per-IP soft rate limiting uses the Cache API inside the Worker.
+#
+# Secrets (NOT here — set with `wrangler secret put NAME`):
+#   CLAUDE_CODE_OAUTH_TOKEN   (preferred — Max subscription)
+#   FORGE_PASSPHRASE          (fail-closed access gate)
+#   ANTHROPIC_API_KEY         (metered fallback)

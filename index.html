@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enspyr · StartSpace flyer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --indigo:#4f46e5; --ink:#171717; --muted:#71717a; --line:#e4e4e7; }
+  *{box-sizing:border-box} html,body{margin:0}
+  body{font-family:"Geist",ui-sans-serif,system-ui,sans-serif;color:var(--ink);background:#f6f6f7;line-height:1.5}
+  .wrap{max-width:760px;margin:0 auto;padding:8vh 6vw 14vh}
+  header{display:flex;align-items:center;gap:13px;margin-bottom:18px}
+  .mark{width:42px;height:42px;border-radius:10px;background:linear-gradient(150deg,#6366f1,#4f46e5);color:#fff;font-weight:900;font-size:24px;display:grid;place-items:center;box-shadow:0 6px 16px rgba(79,70,229,.35)}
+  h1{font-size:28px;font-weight:800;letter-spacing:-0.02em;margin:0}
+  h1 span{display:block;font-weight:500;font-size:14px;color:var(--muted)}
+  p.lede{color:#3f3f46;margin:0 0 28px}
+  .cards{display:grid;gap:14px}
+  a.card{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:0 8px 18px rgba(24,24,27,.05);transition:border-color .15s,transform .08s}
+  a.card:hover{border-color:var(--indigo);transform:translateY(-1px)}
+  a.card .ic{width:40px;height:40px;border-radius:9px;background:#eef2ff;display:grid;place-items:center;flex:none;font-size:20px}
+  a.card h3{margin:0 0 2px;font-size:16px;font-weight:700}
+  a.card p{margin:0;font-size:13px;color:var(--muted)}
+  footer{margin-top:7vh;font-family:"Geist Mono",monospace;font-size:12px;color:var(--muted)}
+  footer a{color:var(--indigo)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark">E</div>
+    <h1>StartSpace flyer<span>Enspyr · we eat complexity for breakfast</span></h1>
+  </header>
+  <p class="lede">The flyer for pinning up at StartSpace, plus the forge that iterates it.</p>
+
+  <div class="cards">
+    <a class="card" href="flyer.html"><span class="ic">📄</span><div><h3>View the flyer — A4</h3><p>Wall / noticeboard poster. Print at A4.</p></div></a>
+    <a class="card" href="flyer-a5.html"><span class="ic">📑</span><div><h3>View the flyer — A5</h3><p>Handout size. Print at A5.</p></div></a>
+    <a class="card" href="enspyr-startspace-A4.pdf"><span class="ic">⬇️</span><div><h3>Download PDFs</h3><p>Print-ready A4 (and A5 alongside).</p></div></a>
+    <a class="card" href="forge/"><span class="ic">⚒️</span><div><h3>The Flyer Forge</h3><p>Riff on the design — build → evaluate → iterate, live.</p></div></a>
+  </div>
+
+  <footer>enspyr.co · powered by <a href="https://github.com/nickmeinhold/forge-web-app">forge-web-app</a></footer>
+</div>
+</body>
+</html>

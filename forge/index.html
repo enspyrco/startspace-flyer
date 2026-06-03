@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Flyer Forge — Enspyr</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- forge engine base styles (pinned), then Enspyr theme overrides below -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nickmeinhold/forge-web-app@v0.1.0/src/ui/forge.css">
+<style>
+  :root { --indigo: #4f46e5; --amber: #fbbf24; --ink: #171717; --muted: #71717a; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+    color: var(--ink); background: #f6f6f7; line-height: 1.5;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 5vh 5vw 12vh; }
+
+  header { display: flex; align-items: center; gap: 13px; margin-bottom: 6px; }
+  .mark { width: 38px; height: 38px; border-radius: 9px; background: linear-gradient(150deg, #6366f1, #4f46e5);
+    color: #fff; font-weight: 900; font-size: 22px; display: grid; place-items: center; box-shadow: 0 6px 16px rgba(79,70,229,.35); }
+  .title { font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
+  .title span { display: block; font-weight: 500; font-size: 13px; color: var(--muted); }
+  .intro { margin: 8px 0 26px; color: #3f3f46; max-width: 70ch; }
+  .intro b { color: var(--ink); }
+  .eyebrow { font-family: "Geist Mono", monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #b45309; margin-top: 18px; }
+
+  /* Theme the engine UI: override forge.css brand variables to Enspyr's palette. */
+  .forge {
+    --forge-accent: #4f46e5;
+    --forge-ink: #171717;
+    --forge-muted: #71717a;
+    --forge-pass: #16a34a;
+    --forge-panel: #ffffff;
+    --forge-border: #e4e4e7;
+    --forge-mono: "Geist Mono", ui-monospace, monospace;
+    font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+  }
+  .forge .forge-cast { font-weight: 700; box-shadow: 0 6px 16px rgba(79,70,229,.3); }
+  .forge .iter.best { box-shadow: 0 0 0 2px rgba(79,70,229,.35); }
+
+  footer { margin-top: 8vh; font-family: "Geist Mono", monospace; font-size: 12px; color: var(--muted); }
+  footer a { color: var(--indigo); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="mark">E</div>
+    <div class="title">The Flyer Forge<span>Enspyr · iterate the StartSpace flyer</span></div>
+  </header>
+
+  <p class="intro">
+    Describe a change to the <a href="../flyer.html" target="_blank">current flyer</a> and the forge will
+    <b>build → evaluate → iterate</b>: a Builder redesigns it, an Evaluator scores it against the Enspyr
+    canon, and a trajectory read tells us whether it's improving, plateauing, or should pivot. For the
+    team to riff on the design — not a customer tool.
+  </p>
+
+  <div class="eyebrow">// forge a riff</div>
+  <div id="forge"></div>
+
+  <footer>
+    forge: build → evaluate → iterate · powered by
+    <a href="https://github.com/nickmeinhold/forge-web-app" target="_blank">forge-web-app</a> ·
+    <a href="../flyer.html">the flyer</a>
+  </footer>
+
+</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "forge-web-app": "https://cdn.jsdelivr.net/gh/nickmeinhold/forge-web-app@v0.1.0/src/profile.mjs",
+    "forge-web-app/ui": "https://cdn.jsdelivr.net/gh/nickmeinhold/forge-web-app@v0.1.0/src/ui/forge.mjs"
+  }
+}
+</script>
+<script type="module">
+  import { mountForge } from "forge-web-app/ui";
+  import { profile } from "../profile.mjs";
+  // generate mode: the engine builds the form + results inside #forge, themed by the CSS above.
+  mountForge({ root: document.getElementById("forge"), profile });
+</script>
+</body>
+</html>
